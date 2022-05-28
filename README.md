@@ -2,7 +2,7 @@
 Custom Lambda Sort<br>
 
 #### I must express how I hate this(6084)!! I thought I was wrong and it really is.
-I am wrong at many parts of this easy question: I was using C++ to solve this problem, then something mysterious happens with runtime errors with virtually useless debug informations in my code where I don't even know which line the error is. Instead of painfully debugging, I just decided to transpile such code manually to Kotlin by converting keywords and switching the C++ lambda comparator with the Kotlin one. Then many things more mysterious happens, now I now which part in Kotlin I have done wrong (not the C++ parts yet, it still remains a mystery). But now let's see the code.<br>
+I am wrong at many parts of this easy question: I was using C++ to solve this problem, then something mysterious happen with runtime errors with virtually useless debug informations in my code where I don't even know which line the error is. Instead of painfully debugging, I just decided to transpile such code manually to Kotlin by converting keywords and switching the C++ lambda comparator with the Kotlin one. Then many things more mysterious happens, now I now which part in Kotlin I have done wrong (not the C++ parts yet, it still remains a mystery). But now let's see the code.<br>
 
 My C++ wrong code with mysterious runtime errors
 ``` C++
