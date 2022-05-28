@@ -104,9 +104,9 @@ sortedBy is a out-place function, so it does not modify your array (my pitfall#1
 Anyway, lets see how to actually sort 2d things.
 
 ``` Kotlin
-a.sortWith(Comparator<Pair<String, Int>>{a,b -> //legacy
-    if (a.second == b.second) b.first.compareTo(a.first)
-    else b.second-a.second
+a.sortWith(Comparator<Pair<String, Int>>{p1, p2 -> //legacy
+    if (p1.second == p2.second) p2.first.compareTo(p1.first)
+    else p2.second-p1.second
 })
 ```
 this means sort by `first` if the `second`s are equal and sort by `second` if the `second`s are not equal. and by default the language sort the strings lexicographically, in this function it means, sort by 2nd desc then by 1st desc. if you want to sort other things just replace the `Pair<String, Int>` with virtually anything else then modify the lambda body to compare whatever things by whichever orders.
