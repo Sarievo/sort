@@ -110,3 +110,11 @@ a.sortWith(Comparator<Pair<String, Int>>{a,b -> //legacy
 })
 ```
 this means sort by `first` if the `second`s are equal and sort by `second` if the `second`s are not equal. and by default the language sort the strings lexicographically, in this function it means, sort by 2nd desc then by 1st desc. if you want to sort other things just replace the `Pair<String, Int>` with virtually anything else then modify the lambda body to compare whatever things by whichever orders.
+
+Newer and better codes that few OJ supports :<
+``` Kotlin
+a.sortWith { p1, p2 ->
+    if (p1.second == p2.second) p2.first.compareTo(p1.first) // sort by first desc if second ones are equal
+    else p2.second - p1.second // sort by second ones desc
+}
+```
