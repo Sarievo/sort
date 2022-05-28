@@ -1,7 +1,7 @@
 # sort
 Custom Lambda Sort<br>
 
-I must express how I hate this(6084)!! I thought I was wrong and it really is.
+####I must express how I hate this(6084)!! I thought I was wrong and it really is.
 I am wrong at many parts of this easy question: I was using C++ to solve this problem, then something mysterious happens with runtime errors with virtually useless debug informations in my code where I don't even know which line the error is. Instead of painfully debugging, I just decided to transpile such code manually to Kotlin by converting keywords and switching the C++ lambda comparator with the Kotlin one. Then many things more mysterious happens, now I now which part in Kotlin I have done wrong (not the C++ parts yet, it still remains a mystery). But now let's see the code.<br>
 
 My C++ wrong code with mysterious runtime errors
@@ -95,3 +95,17 @@ sort them first by second element then by first element if the second element ar
 sort them first by first element then by second element if the first element are equal? 
 sort 3d arrays? sort 9d arrays? sort consecutively in one expression? sort by lambda custom comparators in a anonyous function? 
 painfully internet does not help, not at all on at least today for me
+
+
+I don't want to write with old language either.. Maybe I'll hang out with C++ just on Leet.<br>
+####Okay now the thing is: 
+sortedBy is a out-place function, so it does not modify your array (my pitfall#1), then leet does not support newer language features that I attempt to use and then it's errors everywhere that I do not know to whiteboard-ly fix (my pitfall#2)<br>
+Anyway, lets see how to actually sort 2d things.
+
+``` Kotlin
+a.sortWith(Comparator<Pair<String, Int>>{a,b -> //legacy
+    if (a.second == b.second) b.first.compareTo(a.first)
+    else b.second-a.second
+})
+```
+this means sort by `first` if the `second`s are equal and sort by `second` if the `second`s are not equal. and by default the language sort the strings lexicographically, in this function it means, sort by 2nd desc then by 1st desc. if you want to sort other things just replace the `Pair<String, Int>` with virtually anything else then modify the lambda body to compare whatever things by whichever orders.
